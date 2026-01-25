@@ -1,0 +1,14 @@
+lancedb
+pyarrow
+pandas
+numpy
+sentence-transformers
+torch
+ollama
+fastapi
+uvicorn
+pydantic
+streamlit
+plotly
+python-dotenv
+pyyaml

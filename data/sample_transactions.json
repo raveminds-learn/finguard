@@ -1,0 +1,62 @@
+[
+  {
+    "transaction_id": "TXN_001",
+    "user_id": "USER_NORMAL_001",
+    "amount": 85.50,
+    "merchant": "Whole Foods Market",
+    "location": "Austin, TX",
+    "timestamp": "2026-01-24T10:30:00Z",
+    "device": "iPhone 12",
+    "payment_method": "Credit Card ending in 1234"
+  },
+  {
+    "transaction_id": "TXN_002",
+    "user_id": "USER_NORMAL_002",
+    "amount": 12.99,
+    "merchant": "Starbucks Coffee",
+    "location": "Seattle, WA",
+    "timestamp": "2026-01-24T08:15:00Z",
+    "device": "Android Phone",
+    "payment_method": "Debit Card ending in 5678"
+  },
+  {
+    "transaction_id": "TXN_003_SUSPICIOUS",
+    "user_id": "USER_VICTIM_001",
+    "amount": 47.50,
+    "merchant": "Online Electronics Store",
+    "location": "New York, NY",
+    "timestamp": "2026-01-24T14:23:00Z",
+    "device": "iPhone 13 Pro",
+    "payment_method": "Credit Card ending in 4521"
+  },
+  {
+    "transaction_id": "TXN_004_SUSPICIOUS",
+    "user_id": "USER_VICTIM_002",
+    "amount": 49.99,
+    "merchant": "Tech Gadgets Online",
+    "location": "Los Angeles, CA",
+    "timestamp": "2026-01-24T02:45:00Z",
+    "device": "iPhone 13",
+    "payment_method": "Credit Card ending in 4522"
+  },
+  {
+    "transaction_id": "TXN_005_SUSPICIOUS",
+    "user_id": "USER_VICTIM_003",
+    "amount": 45.00,
+    "merchant": "Electronic Emporium",
+    "location": "Chicago, IL",
+    "timestamp": "2026-01-23T18:30:00Z",
+    "device": "iPhone 13 Pro",
+    "payment_method": "Credit Card ending in 4523"
+  },
+  {
+    "transaction_id": "TXN_006_ATO",
+    "user_id": "USER_COMPROMISED_001",
+    "amount": 899.99,
+    "merchant": "Unknown International Retailer",
+    "location": "Moscow, Russia",
+    "timestamp": "2026-01-24T03:00:00Z",
+    "device": "Unknown Device",
+    "payment_method": "Credit Card ending in 9999"
+  }
+]

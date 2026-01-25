@@ -1,0 +1,39 @@
+# FinGuard Configuration
+
+# Embedding Model Settings
+embedding:
+  model: "all-MiniLM-L6-v2"
+  dimension: 384
+  batch_size: 32
+
+# LLM Settings
+llm:
+  model: "mistral:latest"
+  temperature: 0.2
+  num_predict: 500
+  timeout: 30
+
+# Detection Settings
+detection:
+  similarity_threshold: 0.75  # Cosine similarity threshold
+  time_window_days: 30        # Look back window
+  max_similar_results: 20     # Max similar transactions to retrieve
+  high_risk_threshold: 75     # Score >= 75 is high risk
+  medium_risk_threshold: 50   # Score >= 50 is medium risk
+
+# Database Settings
+database:
+  path: "./data/lancedb"
+  auto_compact: true
+
+# Risk Scoring Weights
+scoring:
+  rule_based_weight: 0.4  # 40% from pattern rules
+  ai_based_weight: 0.6    # 60% from LLM confidence
+
+# Privacy Settings
+privacy:
+  hash_algorithm: "sha256"
+  hash_truncate_length: 16
+  anonymize_merchants: true
+  bucket_amounts: true

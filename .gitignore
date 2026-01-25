@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Local temp/cache
+.tmp/
+
+# Data artifacts (generated)
+data/lancedb/
+
+# OS/editor
+.DS_Store
+Thumbs.db
