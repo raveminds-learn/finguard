@@ -104,7 +104,7 @@ def validate_transaction(transaction: Dict) -> bool:
     
     for field in required_fields:
         if field not in transaction:
-            print(f"❌ Missing required field: {field}")
+            print(f"Missing required field: {field}")
             return False
     
     return True
@@ -167,7 +167,7 @@ def batch_ingest(raw_transactions: list) -> list:
             processed_txn = ingest_transaction(raw_txn)
             processed.append(processed_txn)
         except Exception as e:
-            print(f"❌ Error processing transaction {i+1}: {e}")
+            print(f"Error processing transaction {i+1}: {e}")
             continue
     
     return processed

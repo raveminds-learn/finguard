@@ -1,6 +1,6 @@
 # FinGuard Quick Start Guide
 
-## 🚀 Get Started in 5 Minutes
+## Get Started in 5 Minutes
 
 ### Step 1: Prerequisites
 ```bash
@@ -41,18 +41,18 @@ You should see output like:
 ========================================================
 Processing Transaction: TXN_001
 ========================================================
-📥 Step 1: Ingesting transaction...
-   ✅ Normalized and anonymized
-🔢 Step 2: Vectorizing behavioral pattern...
-   ✅ Generated 384-dim embedding
-💾 Step 3: Storing in vector database...
-   ✅ Stored in LanceDB
-🔍 Step 4: Detecting fraud patterns...
-   📊 Similar transactions: 0
-   👥 Accounts involved: 0
-⏭️  Step 5: Skipping AI investigation (low risk)
-📈 Step 6: Calculating fraud risk score...
-   🎯 Final Score: 15/100 (Low Risk)
+Step 1: Ingesting transaction...
+   Normalized and anonymized
+Step 2: Vectorizing behavioral pattern...
+   Generated 384-dim embedding
+Step 3: Storing in vector database...
+   Stored in LanceDB
+Step 4: Detecting fraud patterns...
+   Similar transactions: 0
+   Accounts involved: 0
+Step 5: Skipping AI investigation (low risk)
+Step 6: Calculating fraud risk score...
+   Final Score: 15/100 (Low Risk)
 ```
 
 ### Step 5: Launch Dashboard
@@ -62,7 +62,7 @@ streamlit run dashboard/app.py
 
 Your browser will open to `http://localhost:8501`
 
-## 🎯 What to Try
+## What to Try
 
 ### Test Individual Transaction
 ```bash
@@ -88,14 +88,14 @@ python main.py --file data/sample_transactions.json
 python main.py --sample --output results.json
 ```
 
-## 📊 Dashboard Features
+## Dashboard Features
 
 1. **Overview Tab**: KPIs, risk distribution, fraud timeline
 2. **Transactions Tab**: Filter and export transaction data
 3. **Analytics Tab**: Merchant analysis, heatmaps
 4. **System Tab**: Configuration and health checks
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Ollama Not Running
 ```bash
@@ -124,14 +124,14 @@ ollama pull llama3.2:latest
 # To:     model='llama3.2:latest'
 ```
 
-## 📚 Next Steps
+## Next Steps
 
 1. **Customize Fraud Patterns**: Edit `backend/database.py` → `_seed_fraud_patterns()`
 2. **Adjust Risk Scoring**: Edit `backend/risk_scoring.py`
 3. **Add More Features**: Extend `backend/ingestion.py` with custom fields
 4. **Build API**: Use the included FastAPI skeleton
 
-## 🆘 Need Help?
+## Need Help?
 
 Check the full README.md for:
 - Detailed architecture explanation
@@ -141,4 +141,4 @@ Check the full README.md for:
 
 ---
 
-**You're all set! Happy fraud detecting! 🛡️**
+**You're all set! Happy fraud detecting!**

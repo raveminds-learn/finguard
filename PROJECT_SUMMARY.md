@@ -1,6 +1,6 @@
 # FinGuard Project Summary
 
-## 🎯 What This Project Does
+## What This Project Does
 
 FinGuard is a **zero-cost behavioral fraud detection system** that uses AI to identify sophisticated fraud patterns that traditional rule-based systems miss. It analyzes transaction behavior patterns across time and accounts to detect:
 
@@ -9,7 +9,7 @@ FinGuard is a **zero-cost behavioral fraud detection system** that uses AI to id
 - **Low-and-Slow Attacks**: Small amounts over time to avoid detection
 - **Velocity Attacks**: Rapid coordinated fraud across accounts
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```
 Transaction Input
@@ -29,7 +29,7 @@ Transaction Input
 7. Alert Generation (Actionable recommendations)
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Component | Technology | Cost |
 |-----------|-----------|------|
@@ -40,9 +40,9 @@ Transaction Input
 | Backend | Python, FastAPI | FREE |
 | Data Processing | pandas, numpy | FREE |
 
-**Total Cost: $0** ✅
+**Total Cost: $0**
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 finguard/
@@ -76,7 +76,7 @@ finguard/
 └── LICENSE                     # MIT License
 ```
 
-## 🔐 Privacy Features
+## Privacy Features
 
 1. **User ID Hashing**: SHA-256 one-way hash (irreversible)
 2. **Merchant Categorization**: Broad categories, not exact names
@@ -86,7 +86,7 @@ finguard/
 
 **Result**: Vector embeddings contain NO personally identifiable information
 
-## 🎯 How It Works - Example
+## How It Works - Example
 
 **Input Transaction:**
 ```json
@@ -143,14 +143,14 @@ finguard/
 }
 ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - **Embedding Generation**: ~50ms per transaction
 - **Vector Search**: ~10ms (top-20 results)
 - **LLM Investigation**: ~2-5 seconds
 - **Total Processing**: ~3-6 seconds per transaction
 
-## 🎓 Key Innovations
+## Key Innovations
 
 1. **Behavioral Memory**: Unlike traditional point-in-time analysis, stores and queries behavioral patterns across time
 2. **Semantic Similarity**: Finds fraud even when details differ (different merchants, amounts, times)
@@ -158,7 +158,7 @@ finguard/
 4. **Explainable AI**: Clear reasoning for every fraud decision
 5. **Zero-Cost**: Enterprise-grade detection without enterprise costs
 
-## 🚀 Getting Started
+## Getting Started
 
 **1. Quick Setup:**
 ```bash
@@ -175,7 +175,7 @@ python main.py --sample
 streamlit run dashboard/app.py
 ```
 
-## 📈 Use Cases
+## Use Cases
 
 - **Banks**: Real-time transaction monitoring
 - **E-commerce**: Payment fraud detection
@@ -183,7 +183,7 @@ streamlit run dashboard/app.py
 - **Research**: Fraud pattern analysis
 - **Education**: AI/ML demonstrations
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Multi-model ensemble (combine multiple LLMs)
 - [ ] Graph analysis (account relationship networks)
@@ -193,7 +193,7 @@ streamlit run dashboard/app.py
 - [ ] Automated model retraining
 - [ ] Integration with payment processors
 
-## 🤝 Contributing
+## Contributing
 
 This is an open-source educational project. Contributions welcome:
 - Add new fraud patterns
@@ -201,14 +201,14 @@ This is an open-source educational project. Contributions welcome:
 - Enhance dashboard features
 - Add integration examples
 
-## 📚 Resources
+## Resources
 
 - [LanceDB Documentation](https://lancedb.github.io/lancedb/)
 - [Ollama Models](https://ollama.ai/library)
 - [Sentence Transformers](https://www.sbert.net/)
 - [Streamlit Docs](https://docs.streamlit.io/)
 
-## ⚖️ License
+## License
 
 MIT License - Free to use, modify, and distribute
 

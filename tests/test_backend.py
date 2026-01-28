@@ -92,18 +92,18 @@ if __name__ == "__main__":
     print("Running FinGuard tests...")
     
     test_imports()
-    print("✅ Import test passed")
+    print("Import test passed")
     
     test_ingestion()
-    print("✅ Ingestion test passed")
+    print("Ingestion test passed")
     
     test_vectorization()
-    print("✅ Vectorization test passed")
+    print("Vectorization test passed")
     
     test_amount_bucketing()
-    print("✅ Amount bucketing test passed")
+    print("Amount bucketing test passed")
     
     test_user_hashing()
-    print("✅ User hashing test passed")
+    print("User hashing test passed")
     
-    print("\n🎉 All tests passed!")
+    print("\nAll tests passed!")

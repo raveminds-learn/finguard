@@ -2,7 +2,7 @@
 
 A zero-cost, privacy-first AI fraud detection system using LanceDB vector database and Ollama LLM for behavioral pattern recognition.
 
-## 🎯 Key Features
+## Key Features
 
 - **Behavioral Vectorization**: Converts transactions into semantic embeddings (no PII).
 - **Pattern Detection**: Identifies complex fraud patterns (Card Testing, Account Takeover) across time.
@@ -10,14 +10,14 @@ A zero-cost, privacy-first AI fraud detection system using LanceDB vector databa
 - **Real-time Dashboard**: Interactive monitoring interface.
 - **Privacy-First**: Hashed IDs and generalized data; no raw PII is stored or processed.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Vector DB**: LanceDB (Serverless, embedded)
 - **AI/LLM**: Ollama (Mistral/Llama), sentence-transformers
 - **Interface**: Streamlit
 - **Backend**: Python
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 1. **Python 3.9+**
@@ -39,7 +39,7 @@ These scripts automatically set up the environment, install dependencies, initia
 
 **Tip:** In the UI, go to the **System** tab and click **Run Sample Transactions** to populate the dashboard with test data.
 
-## 🕹️ Manual Usage
+## Manual Usage
 
 If you prefer running components manually:
 
@@ -58,14 +58,14 @@ If you installed dependencies into the `venv`, run:
 .\venv\Scripts\python main.py --sample
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 - `backend/`: Core logic (Vectorization, Detection, Investigation)
 - `dashboard/`: Streamlit UI application
 - `data/`: LanceDB storage and samples
 - `config/`: System configuration (`config.yaml`)
 
-## 🔧 Configuration
+## Configuration
 
 Edit `config/config.yaml` to customize models, thresholds, and risk weights.
 

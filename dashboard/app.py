@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 # Page config
 st.set_page_config(
     page_title="FinGuard - Fraud Detection Dashboard",
-    page_icon="🛡️",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -63,11 +63,11 @@ if 'db' not in st.session_state:
         st.stop()
 
 # Header
-st.markdown('<p class="main-header">🛡️ FinGuard - Behavioral Fraud Detection</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-header">FinGuard - Behavioral Fraud Detection</p>', unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
-    st.markdown("### 🛡️ FinGuard")
+    st.markdown("### FinGuard")
     st.markdown("*Zero-Cost AI Fraud Detection*")
     st.markdown("---")
     
@@ -76,22 +76,22 @@ with st.sidebar:
     # System health checks
     try:
         db_check = st.session_state.db is not None
-        st.success("✅ LanceDB Connected")
+        st.success("LanceDB Connected")
     except:
-        st.error("❌ LanceDB Error")
+        st.error("LanceDB Error")
     
     try:
         import ollama
         ollama.list()
-        st.success("✅ Ollama LLM Active")
+        st.success("Ollama LLM Active")
     except:
-        st.warning("⚠️  Ollama Not Running")
+        st.warning("Ollama Not Running")
     
     try:
         from sentence_transformers import SentenceTransformer
-        st.success("✅ Embeddings Ready")
+        st.success("Embeddings Ready")
     except:
-        st.error("❌ Embeddings Error")
+        st.error("Embeddings Error")
     
     st.markdown("---")
     st.markdown("### Quick Stats")
@@ -115,7 +115,7 @@ with st.sidebar:
         }
 
 # Main content tabs
-tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Transactions", "📈 Analytics", "⚙️ System"])
+tab1, tab2, tab3, tab4 = st.tabs(["Overview", "Transactions", "Analytics", "System"])
 
 with tab1:
     st.markdown("## System Overview")
@@ -182,7 +182,7 @@ with tab1:
                 
                 st.plotly_chart(fig, use_container_width=True)
             else:
-                st.info("📊 No transaction data available yet. Go to System tab and click 'Run Sample Transactions'!")
+                st.info("No transaction data available yet. Go to System tab and click 'Run Sample Transactions'!")
                 
         except Exception as e:
             st.error(f"Error loading risk distribution: {e}")
@@ -222,15 +222,15 @@ with tab1:
                     
                     st.plotly_chart(fig, use_container_width=True)
                 else:
-                    st.info("📈 No fraud score data available yet")
+                    st.info("No fraud score data available yet")
             else:
-                st.info("📈 No fraud score data available yet. Process some transactions first!")
+                st.info("No fraud score data available yet. Process some transactions first!")
                 
         except Exception as e:
             st.error(f"Error loading timeline: {e}")
     
     # Recent high-risk transactions
-    st.markdown("### 🚨 Recent High-Risk Transactions")
+    st.markdown("### Recent High-Risk Transactions")
     
     try:
         flagged = st.session_state.db.get_flagged_transactions(limit=10)
@@ -246,7 +246,7 @@ with tab1:
             
             st.dataframe(display_df, use_container_width=True, height=250)
         else:
-            st.info("✅ No high-risk transactions detected")
+            st.info("No high-risk transactions detected")
     except Exception as e:
         st.error(f"Error loading flagged transactions: {e}")
 
@@ -301,13 +301,13 @@ with tab2:
             # Download button
             csv = df.to_csv(index=False)
             st.download_button(
-                label="📥 Download as CSV",
+                label="Download as CSV",
                 data=csv,
                 file_name=f"transactions_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
                 mime="text/csv"
             )
         else:
-            st.info("📦 No transactions available. Go to System tab and click 'Run Sample Transactions' to get started!")
+            st.info("No transactions available. Go to System tab and click 'Run Sample Transactions' to get started!")
             
     except Exception as e:
         st.error(f"Error loading transactions: {e}")
@@ -381,7 +381,7 @@ with tab3:
                     
                     st.plotly_chart(fig, use_container_width=True)
         else:
-            st.info("📊 No data available for analytics. Process some transactions first!")
+            st.info("No data available for analytics. Process some transactions first!")
             
     except Exception as e:
         st.error(f"Error generating analytics: {e}")
@@ -418,21 +418,21 @@ with tab4:
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("🔄 Refresh Dashboard"):
+        if st.button("Refresh Dashboard"):
             st.rerun()
     
     with col2:
-        if st.button("🗑️ Clear Database"):
+        if st.button("Clear Database"):
             if st.checkbox("Confirm deletion"):
                 st.warning("This will delete all transaction data!")
     
     st.markdown("---")
     
     # NEW: Transaction Simulator Section
-    st.markdown("### 🎯 Transaction Simulator")
+    st.markdown("### Transaction Simulator")
     st.write("Process sample transactions to test the fraud detection system in real-time")
     
-    if st.button("▶️ Run Sample Transactions", type="primary", use_container_width=True):
+    if st.button("Run Sample Transactions", type="primary", use_container_width=True):
         try:
             # Import necessary functions from main.py
             import importlib.util
@@ -450,7 +450,7 @@ with tab4:
             # Load sample transactions
             samples = load_sample_transactions()
             
-            st.info(f"🎬 Starting simulation with {len(samples)} sample transactions...")
+            st.info(f"Starting simulation with {len(samples)} sample transactions...")
             
             # Create progress tracking
             progress_bar = st.progress(0)
@@ -464,7 +464,7 @@ with tab4:
             
             # Process each transaction
             for i, txn in enumerate(samples):
-                status_text.text(f"⚙️ Processing {i+1}/{len(samples)}: {txn['transaction_id']}...")
+                status_text.text(f"Processing {i+1}/{len(samples)}: {txn['transaction_id']}...")
                 
                 try:
                     # Process transaction (suppressing print statements)
@@ -487,7 +487,7 @@ with tab4:
                         low_risk_count += 1
                     
                 except Exception as e:
-                    st.error(f"❌ Error processing {txn['transaction_id']}: {e}")
+                    st.error(f"Error processing {txn['transaction_id']}: {e}")
                 
                 # Update progress
                 progress_bar.progress((i + 1) / len(samples))
@@ -497,10 +497,10 @@ with tab4:
             progress_bar.empty()
             
             # Show success message
-            st.success(f"✅ Successfully processed {len(results)}/{len(samples)} transactions!")
+            st.success(f"Successfully processed {len(results)}/{len(samples)} transactions!")
             
             # Show summary
-            st.markdown("### 📊 Simulation Results")
+            st.markdown("### Simulation Results")
             
             col1, col2, col3, col4 = st.columns(4)
             
@@ -508,21 +508,21 @@ with tab4:
                 st.metric("Total Processed", len(results))
             
             with col2:
-                st.metric("🔴 High Risk", high_risk_count)
+                st.metric("High Risk", high_risk_count)
             
             with col3:
-                st.metric("🟡 Medium Risk", medium_risk_count)
+                st.metric("Medium Risk", medium_risk_count)
             
             with col4:
-                st.metric("🟢 Low Risk", low_risk_count)
+                st.metric("Low Risk", low_risk_count)
             
             # Show high-risk transactions
             if high_risk_count > 0:
-                st.markdown("#### 🚨 High Risk Transactions Detected")
+                st.markdown("#### High Risk Transactions Detected")
                 high_risk_results = [r for r in results if r['risk_level'] == 'High']
                 
                 for result in high_risk_results:
-                    with st.expander(f"⚠️ {result['transaction_id']} - Score: {result['fraud_risk_score']}/100"):
+                    with st.expander(f"{result['transaction_id']} - Score: {result['fraud_risk_score']}/100"):
                         st.write(f"**Pattern:** {result['behavioral_analysis']['known_fraud_pattern']}")
                         st.write(f"**Reasoning:** {result['reasoning']}")
                         st.write(f"**Recommendations:**")
@@ -538,7 +538,7 @@ with tab4:
             st.rerun()
             
         except Exception as e:
-            st.error(f"❌ Simulation failed: {e}")
+            st.error(f"Simulation failed: {e}")
             st.write("**Troubleshooting:**")
             st.write("1. Make sure Ollama is running: `ollama serve`")
             st.write("2. Check if Mistral model is downloaded: `ollama list`")

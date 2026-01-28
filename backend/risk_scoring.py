@@ -131,7 +131,7 @@ def generate_recommendations(
     if fraud_score >= 75:
         # HIGH RISK
         recommendations.extend([
-            f"🚨 URGENT: Flag account {user_hash}... for immediate review",
+            f"URGENT: Flag account {user_hash}... for immediate review",
             "Temporarily block/hold account pending investigation",
             "Notify fraud investigation team within 15 minutes",
             "Review all transactions from this account in last 30 days",
@@ -140,7 +140,7 @@ def generate_recommendations(
     elif fraud_score >= 50:
         # MEDIUM RISK
         recommendations.extend([
-            f"⚠️ Flag account {user_hash}... for manual review within 24 hours",
+            f"Flag account {user_hash}... for manual review within 24 hours",
             "Implement step-up authentication for next 3 transactions",
             "Monitor account closely for next 7 days",
             "Review recent transaction history (last 14 days)",
